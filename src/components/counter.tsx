@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { useSignal } from "@preact/signals-react";
 
 export const Counter: React.FC = () => {
-  const count = useSignal(0);
-  const [counting, setCounting] = useState(0);
+  const count: any = useSignal(0);
+  const [counting, setCounting] = useState<number>(0);
 
   const increment = () => {
     count.value += 1;
