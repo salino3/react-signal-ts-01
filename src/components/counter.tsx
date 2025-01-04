@@ -4,6 +4,7 @@ import { useSignal } from "@preact/signals-react";
 export const Counter: React.FC = () => {
   const count: any = useSignal(0);
   const [counting, setCounting] = useState<number>(0);
+  let countingJS: number = 0;
 
   const increment = () => {
     count.value += 1;
@@ -15,6 +16,11 @@ export const Counter: React.FC = () => {
     console.log("useState Count: ", counting);
   };
 
+  const increment3 = () => {
+    countingJS = countingJS += 1;
+    console.log("Javascript Count: ", countingJS);
+  };
+
   return (
     <div>
       <h1>Counter Example</h1>
@@ -24,6 +30,9 @@ export const Counter: React.FC = () => {
       <hr />
       <p>useState Count: {counting}</p>
       <button onClick={increment2}>Increment with useState</button>
+      <hr />
+      <p>Javascript Count: {countingJS}</p>
+      <button onClick={increment3}>Increment with Javascript</button>
     </div>
   );
 };
